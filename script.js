@@ -23,7 +23,7 @@
     about_title: "हमारे बारे में",
     about_sub: "Shyam Videography and Photography",
     about_body: "Shyam Videography and Photography एक विश्वसनीय और पेशेवर फोटोग्राफी एवं वीडियोग्राफी सेवा है, जो खास तौर पर शादी, प्री-वेडिंग, सगाई और पारिवारिक कार्यक्रमों के खास पलों को खूबसूरती से कैद करने के लिए जानी जाती है। हमारी टीम आधुनिक कैमरा तकनीक, रचनात्मक सोच और अनुभव के साथ हर कार्यक्रम को यादगार बनाने का प्रयास करती है। हमारा लक्ष्य सिर्फ फोटो और वीडियो बनाना नहीं है, बल्कि आपके जीवन के अनमोल पलों को ऐसी यादों में बदलना है जिन्हें आप और आपका परिवार हमेशा गर्व और खुशी के साथ देख सकें। हम हर ग्राहक के साथ ईमानदारी, भरोसा और गुणवत्ता के साथ काम करते हैं ताकि आपकी खुशियों के पल हमेशा के लिए संजोए जा सकें।",
-    gallery_title: "बिहारी वेडिंग गैलरी",
+    gallery_title: " श्याम वेडिंग गैलरी",
     gallery_sub: "बिहार की रस्मों और पलों की खूबसूरत झलक।",
     cat_all: "सभी",
     cat_haldi: "हल्दी",
@@ -33,7 +33,7 @@
     cat_baraat: "बारात",
     cat_portraits: "ब्राइड/ग्रूम पोर्ट्रेट",
     cat_family: "परिवारिक पल",
-    videos_title: "बिहारी सिनेमेटिक वेडिंग वीडियो",
+    videos_title: " श्याम सिनेमेटिक वेडिंग वीडियो",
     videos_sub: "हल्दी, जयमाला, बारात और सिनेमेटिक हाइलाइट्स।",
     video_card_1: "Bihari Full Cinematic Wedding",
     video_card_2: "Haldi & Mehendi Ceremony",
@@ -111,7 +111,7 @@
     about_title: "About Us",
     about_sub: "Shyam Videography and Photography",
     about_body: "Shyam Videography and Photography is a trusted and professional photography and videography service dedicated to capturing the most beautiful moments of weddings, pre-wedding shoots, engagements, and family events. Our team combines modern camera technology, creative vision, and professional experience to make every event memorable. Our goal is not just to take photos or videos, but to turn your special life moments into timeless memories that you and your family can cherish forever. We believe in delivering quality, trust, and creativity in every project we work on.",
-    gallery_title: "Bihari Wedding Gallery",
+    gallery_title: " Shyam Wedding Gallery",
     gallery_sub: "A glimpse of Bihar's wedding traditions and rituals.",
     cat_all: "All",
     cat_haldi: "Haldi",
@@ -121,7 +121,7 @@
     cat_baraat: "Baraat",
     cat_portraits: "Bride & Groom Portraits",
     cat_family: "Family Moments",
-    videos_title: "Bihari Cinematic Wedding Videos",
+    videos_title: "Shyam Cinematic Wedding Videos",
     videos_sub: "Highlights from haldi, jaimala, baraat, and cinematic moments.",
     video_card_1: "Bihari Full Cinematic Wedding",
     video_card_2: "Haldi & Mehendi Ceremony",
@@ -963,4 +963,5 @@ calendarMonth = clampCalendarMonth(calendarMonth);
 setLanguage("hi");
 renderGallery(activeFilter);
 renderCalendar();
+
 
