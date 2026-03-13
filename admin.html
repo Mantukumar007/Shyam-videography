@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel — Shyam Videography and Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-body">
+  <div class="page-bg"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">SVP</span>
+        <span class="logo-text">Admin Panel</span>
+      </a>
+      <div class="admin-toolbar" id="adminNav">
+        <button class="btn btn-outline" type="button" id="logoutBtn">Logout</button>
+        <a class="btn btn-outline" href="index.html">Back to Website</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section admin-main">
+    <div class="container">
+      <div class="admin-login" id="adminLogin">
+        <div class="section-title">
+          <h2>Admin Login</h2>
+          <p>Use your phone/email and password to access the dashboard.</p>
+        </div>
+        <form id="adminLoginForm">
+          <label>
+            <span>Phone or Email</span>
+            <input type="text" name="loginId" placeholder="8507374062" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" placeholder="••••••••" required />
+          </label>
+          <button class="btn btn-primary" type="submit">Login</button>
+          <p class="form-success" id="loginError" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="admin-dashboard" id="adminDashboard" hidden>
+        <div class="section-title">
+          <h2>Admin Dashboard</h2>
+          <p>Manage booking dates, incoming requests, and reports.</p>
+        </div>
+
+        <div class="admin-panel">
+          <div class="admin-grid">
+            <div>
+              <h3>Manage Calendar</h3>
+              <form id="adminForm">
+                <label>
+                  <span>Select Date</span>
+                  <input type="date" name="date" required />
+                </label>
+                <label>
+                  <span>Status</span>
+                  <select name="status" class="admin-select">
+                    <option value="booked">Booked</option>
+                    <option value="available">Available</option>
+                    <option value="shubh">Shubh Vivah Tithi</option>
+                    <option value="normal">Normal Date</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Event Details</span>
+                  <textarea name="details" rows="4" placeholder="Example: Sharma Wedding, Patna"></textarea>
+                </label>
+                <div class="admin-actions">
+                  <button class="btn btn-primary" type="submit">Save</button>
+                  <button class="btn btn-outline" type="button" id="clearDate">Remove Date</button>
+                </div>
+              </form>
+
+              <div class="admin-list" id="calendarList">
+                <div class="admin-item">No calendar entries yet.</div>
+              </div>
+            </div>
+
+            <div>
+              <h3>Manage Bookings</h3>
+              <div class="admin-list" id="bookingList">
+                <div class="admin-item">No bookings yet.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="section report-print" id="bookingReport">
+          <div class="admin-toolbar">
+            <h3>Booking Report</h3>
+            <button class="btn btn-primary" type="button" id="downloadReport">Save PDF</button>
+          </div>
+          <div class="report-grid" id="reportSummary"></div>
+          <div class="report-table" id="reportTable"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
