@@ -31,16 +31,21 @@
           <li><a href="#gallery" data-i18n="nav_gallery">गैलरी</a></li>
           <li><a href="#services" data-i18n="nav_services">सेवाएं</a></li>
           <li><a href="#videos" data-i18n="nav_videos">वीडियो</a></li>
-          <li><a href="#booking" data-i18n="nav_booking">बुकिंग</a></li>
+          <li><a href="#enquiry" data-i18n="nav_enquiry">पूछताछ</a></li>
           <li><a href="#reviews" data-i18n="nav_reviews">रिव्यू</a></li>
           <li><a href="#contact" data-i18n="nav_contact">संपर्क</a></li>
+          <li class="nav-lang">
+            <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+              <span class="lang-icon">🌐</span>
+              <span data-i18n="nav_language">भाषा</span>
+            </button>
+            <div class="lang-menu" role="menu" aria-label="Language">
+              <button type="button" class="lang-btn active" data-lang="hi">हिंदी</button>
+              <button type="button" class="lang-btn" data-lang="en">English</button>
+            </div>
+          </li>
         </ul>
       </nav>
-      <div class="lang-switch" aria-label="Language Switch">
-        <button type="button" class="lang-btn active" data-lang="hi">Hindi</button>
-        <span class="lang-sep">|</span>
-        <button type="button" class="lang-btn" data-lang="en">English</button>
-      </div>
     </div>
   </header>
 
@@ -49,14 +54,14 @@
       <div class="container hero-grid">
         <div class="hero-content reveal">
           <p class="eyebrow" data-i18n="hero_eyebrow">Cinematic. Elegant. Timeless.</p>
-          <h1 data-i18n="hero_title">Shyam Videography & Photography</h1>
+          <h1 class="hero-title" data-i18n="hero_title">Shyam Videography & Photography</h1>
           <p class="hero-desc" data-i18n="hero_desc">
             हम आपके खास पलों को यादगार बनाने के लिए प्रोफेशनल फोटोग्राफी और वीडियोग्राफी सेवा प्रदान करते हैं।
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:8507374062" data-i18n="btn_call">📞 Call Now</a>
             <a class="btn btn-outline" href="#gallery" data-i18n="btn_gallery">📷 View Gallery</a>
-            <a class="btn btn-outline" href="#booking" data-i18n="btn_book">📅 Book Now</a>
+            <a class="btn btn-outline" href="#enquiry" data-i18n="btn_enquiry">📩 Send Enquiry</a>
             <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Doila+Bintoli+Mashrakh+841417" target="_blank" rel="noopener" data-i18n="btn_direction">📍 Direction</a>
           </div>
         </div>
@@ -82,7 +87,7 @@
         </div>
         <div class="about-card reveal">
           <p data-i18n="about_body">
-            Shyam Videography and Photography एक पेशेवर फोटोग्राफी और वीडियोग्राफी सेवा है जो खास तौर पर शादी, प्री-वेडिंग और पारिवारिक समारोहों के खूबसूरत पलों को यादगार बनाने के लिए समर्पित है। हमारी टीम आधुनिक कैमरा तकनीक और रचनात्मक शैली का उपयोग करके हर छोटे-बड़े पल को बेहतरीन तरीके से कैद करती है। हमारा उद्देश्य है कि आपके जीवन के सबसे महत्वपूर्ण पलों को ऐसी यादों में बदल दें जिन्हें आप हमेशा संजो कर रख सकें।
+            Shyam Videography and Photography एक विश्वसनीय और पेशेवर फोटोग्राफी एवं वीडियोग्राफी सेवा है, जो खास तौर पर शादी, प्री-वेडिंग, सगाई और पारिवारिक कार्यक्रमों के खास पलों को खूबसूरती से कैद करने के लिए जानी जाती है। हमारी टीम आधुनिक कैमरा तकनीक, रचनात्मक सोच और अनुभव के साथ हर कार्यक्रम को यादगार बनाने का प्रयास करती है। हमारा लक्ष्य सिर्फ फोटो और वीडियो बनाना नहीं है, बल्कि आपके जीवन के अनमोल पलों को ऐसी यादों में बदलना है जिन्हें आप और आपका परिवार हमेशा गर्व और खुशी के साथ देख सकें। हम हर ग्राहक के साथ ईमानदारी, भरोसा और गुणवत्ता के साथ काम करते हैं ताकि आपकी खुशियों के पल हमेशा के लिए संजोए जा सकें।
           </p>
         </div>
       </div>
@@ -164,11 +169,11 @@
       </div>
     </section>
 
-    <section id="booking" class="section booking">
+    <section id="enquiry" class="section booking">
       <div class="container">
         <div class="section-title reveal">
-          <h2 data-i18n="booking_title">बुकिंग करें</h2>
-          <p data-i18n="booking_sub">अपनी तारीख अभी सुरक्षित करें।</p>
+          <h2 data-i18n="enquiry_title">पूछताछ करें</h2>
+          <p data-i18n="enquiry_sub">अपनी जरूरत हमें बताएं, हम जल्दी संपर्क करेंगे।</p>
         </div>
         <div class="booking-layout reveal">
           <div class="calendar-panel" id="calendarPanel">
@@ -180,15 +185,15 @@
             <div class="calendar-weekdays" id="calendarWeekdays"></div>
             <div class="calendar-grid" id="calendarGrid"></div>
             <div class="calendar-legend">
-              <span class="legend available" data-i18n="cal_available">Available for Booking</span>
               <span class="legend shubh" data-i18n="cal_shubh">शुभ विवाह तिथि</span>
               <span class="legend normal" data-i18n="cal_normal">सामान्य तिथि</span>
-              <span class="legend booked" data-i18n="cal_booked">Booked / Unavailable</span>
+              <span class="legend enquired" data-i18n="cal_enquired">पूछताछ की गई तिथि</span>
             </div>
             <p class="calendar-note" id="calendarNote"></p>
+            <div class="calendar-detail" id="calendarDetail"></div>
           </div>
 
-          <form class="booking-form" id="bookingForm">
+          <form class="booking-form" id="enquiryForm">
             <div class="form-grid">
               <label>
                 <span data-i18n="form_name">नाम</span>
@@ -216,7 +221,7 @@
                 <textarea name="message" rows="4" placeholder="अपनी डिटेल्स लिखें" data-i18n-placeholder="form_message_ph"></textarea>
               </label>
             </div>
-            <button class="btn btn-primary" type="submit" data-i18n="btn_book">📅 Book Now</button>
+            <button class="btn btn-primary" type="submit" data-i18n="btn_enquiry_send">📩 Send Enquiry</button>
             <p class="form-success" id="formSuccess" aria-live="polite"></p>
           </form>
         </div>
@@ -336,5 +341,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
 
 

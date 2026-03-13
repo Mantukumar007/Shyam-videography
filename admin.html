@@ -48,59 +48,39 @@
       <div class="admin-dashboard" id="adminDashboard" hidden>
         <div class="section-title">
           <h2>Admin Dashboard</h2>
-          <p>Manage booking dates, incoming requests, and reports.</p>
+          <p>Manage enquiry dates and incoming requests.</p>
         </div>
 
         <div class="admin-panel">
           <div class="admin-grid">
             <div>
-              <h3>Manage Calendar</h3>
-              <form id="adminForm">
-                <label>
-                  <span>Select Date</span>
-                  <input type="date" name="date" required />
-                </label>
-                <label>
-                  <span>Status</span>
-                  <select name="status" class="admin-select">
-                    <option value="booked">Booked</option>
-                    <option value="available">Available</option>
-                    <option value="shubh">Shubh Vivah Tithi</option>
-                    <option value="normal">Normal Date</option>
-                  </select>
-                </label>
-                <label>
-                  <span>Event Details</span>
-                  <textarea name="details" rows="4" placeholder="Example: Sharma Wedding, Patna"></textarea>
-                </label>
-                <div class="admin-actions">
-                  <button class="btn btn-primary" type="submit">Save</button>
-                  <button class="btn btn-outline" type="button" id="clearDate">Remove Date</button>
+              <h3>Vivah Muhurat Calendar</h3>
+              <div class="calendar-panel admin-calendar">
+                <div class="calendar-header">
+                  <button type="button" class="cal-nav" data-admin-cal-prev aria-label="Previous month">‹</button>
+                  <div class="calendar-title" id="adminCalendarTitle"></div>
+                  <button type="button" class="cal-nav" data-admin-cal-next aria-label="Next month">›</button>
                 </div>
-              </form>
-
-              <div class="admin-list" id="calendarList">
-                <div class="admin-item">No calendar entries yet.</div>
+                <div class="calendar-weekdays" id="adminCalendarWeekdays"></div>
+                <div class="calendar-grid" id="adminCalendarGrid"></div>
+                <div class="calendar-legend">
+                  <span class="legend shubh">Shubh Vivah Tithi</span>
+                  <span class="legend normal">Normal Date</span>
+                  <span class="legend enquired">Enquired</span>
+                </div>
+                <p class="calendar-note" id="adminCalendarNote"></p>
+                <div class="calendar-detail" id="adminCalendarDetail"></div>
               </div>
             </div>
 
             <div>
-              <h3>Manage Bookings</h3>
-              <div class="admin-list" id="bookingList">
-                <div class="admin-item">No bookings yet.</div>
+              <h3>Manage Enquiries</h3>
+              <div class="admin-list" id="enquiryList">
+                <div class="admin-item">No enquiries yet.</div>
               </div>
             </div>
           </div>
         </div>
-
-        <section class="section report-print" id="bookingReport">
-          <div class="admin-toolbar">
-            <h3>Booking Report</h3>
-            <button class="btn btn-primary" type="button" id="downloadReport">Save PDF</button>
-          </div>
-          <div class="report-grid" id="reportSummary"></div>
-          <div class="report-table" id="reportTable"></div>
-        </section>
       </div>
     </div>
   </main>

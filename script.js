@@ -6,21 +6,23 @@
     nav_gallery: "गैलरी",
     nav_services: "सेवाएं",
     nav_videos: "वीडियो",
-    nav_booking: "बुकिंग",
+    nav_enquiry: "पूछताछ",
     nav_reviews: "रिव्यू",
     nav_contact: "संपर्क",
+    nav_language: "भाषा",
     hero_eyebrow: "सिनेमेटिक। एलिगेंट। टाइमलेस।",
     hero_title: "Shyam Videography & Photography",
     hero_desc: "हम आपके खास पलों को यादगार बनाने के लिए प्रोफेशनल फोटोग्राफी और वीडियोग्राफी सेवा प्रदान करते हैं।",
     btn_call: "📞 Call Now",
     btn_gallery: "📷 View Gallery",
-    btn_book: "📅 Book Now",
+    btn_enquiry: "📩 Send Enquiry",
     btn_direction: "📍 Direction",
     btn_whatsapp: "💬 WhatsApp Chat",
     btn_select_date: "📅 तारीख चुनें",
+    btn_enquiry_send: "📩 Send Enquiry",
     about_title: "हमारे बारे में",
     about_sub: "Shyam Videography and Photography",
-    about_body: "Shyam Videography and Photography एक पेशेवर फोटोग्राफी और वीडियोग्राफी सेवा है जो खास तौर पर शादी, प्री-वेडिंग और पारिवारिक समारोहों के खूबसूरत पलों को यादगार बनाने के लिए समर्पित है। हमारी टीम आधुनिक कैमरा तकनीक और रचनात्मक शैली का उपयोग करके हर छोटे-बड़े पल को बेहतरीन तरीके से कैद करती है। हमारा उद्देश्य है कि आपके जीवन के सबसे महत्वपूर्ण पलों को ऐसी यादों में बदल दें जिन्हें आप हमेशा संजो कर रख सकें।",
+    about_body: "Shyam Videography and Photography एक विश्वसनीय और पेशेवर फोटोग्राफी एवं वीडियोग्राफी सेवा है, जो खास तौर पर शादी, प्री-वेडिंग, सगाई और पारिवारिक कार्यक्रमों के खास पलों को खूबसूरती से कैद करने के लिए जानी जाती है। हमारी टीम आधुनिक कैमरा तकनीक, रचनात्मक सोच और अनुभव के साथ हर कार्यक्रम को यादगार बनाने का प्रयास करती है। हमारा लक्ष्य सिर्फ फोटो और वीडियो बनाना नहीं है, बल्कि आपके जीवन के अनमोल पलों को ऐसी यादों में बदलना है जिन्हें आप और आपका परिवार हमेशा गर्व और खुशी के साथ देख सकें। हम हर ग्राहक के साथ ईमानदारी, भरोसा और गुणवत्ता के साथ काम करते हैं ताकि आपकी खुशियों के पल हमेशा के लिए संजोए जा सकें।",
     gallery_title: "बिहारी वेडिंग गैलरी",
     gallery_sub: "बिहार की रस्मों और पलों की खूबसूरत झलक।",
     cat_all: "सभी",
@@ -45,8 +47,8 @@
     service_4: "❤️ प्री-वेडिंग शूट",
     service_5: "🎂 बर्थडे पार्टी शूट",
     service_6: "🎬 सिनेमेटिक वीडियो एडिटिंग",
-    booking_title: "बुकिंग करें",
-    booking_sub: "अपनी तारीख अभी सुरक्षित करें।",
+    enquiry_title: "पूछताछ करें",
+    enquiry_sub: "अपनी जरूरत हमें बताएं, हम जल्दी संपर्क करेंगे।",
     form_name: "नाम",
     form_phone: "फोन नंबर",
     form_event: "इवेंट टाइप",
@@ -59,12 +61,17 @@
     form_event_date_ph: "कैलेंडर से तारीख चुनें",
     form_location_ph: "इवेंट स्थान",
     form_message_ph: "अपनी डिटेल्स लिखें",
-    cal_available: "उपलब्ध (बुकिंग के लिए)",
+    cal_available: "उपलब्ध तिथि",
     cal_shubh: "शुभ विवाह तिथि",
     cal_normal: "सामान्य तिथि",
-    cal_booked: "बुक्ड / उपलब्ध नहीं",
-    cal_select_prompt: "कृपया उपलब्ध तारीख चुनें।",
-    cal_booked_note: "यह तारीख बुक्ड है।",
+    cal_enquired: "पूछताछ की गई तिथि",
+    cal_unavailable: "अनुपलब्ध तिथि",
+    cal_select_prompt: "कृपया तारीख चुनें।",
+    cal_label_date: "तिथि",
+    cal_label_status: "स्थिति",
+    cal_label_muhurat: "मुहूर्त",
+    cal_label_enquiries: "पूछताछ",
+    cal_muhurat_na: "मुहूर्त जानकारी उपलब्ध नहीं",
     reviews_title: "ग्राहक समीक्षाएं",
     reviews_sub: "हमारे ग्राहकों की खुशियाँ हमारी पहचान हैं।",
     review_1: "बहुत शानदार फोटोग्राफी और प्रोफेशनल सर्विस।",
@@ -77,7 +84,7 @@
     contact_sub: "हमसे जुड़े और अपने इवेंट को खास बनाएं।",
     contact_phone: "फोन",
     contact_address: "पता",
-    success_msg: "WhatsApp पर आपका संदेश तैयार है।",
+    success_msg: "WhatsApp पर आपकी पूछताछ तैयार है।",
     select_date_error: "कृपया पहले कैलेंडर से तारीख चुनें।"
   },
   en: {
@@ -87,21 +94,23 @@
     nav_gallery: "Gallery",
     nav_services: "Services",
     nav_videos: "Videos",
-    nav_booking: "Booking",
+    nav_enquiry: "Enquiry",
     nav_reviews: "Reviews",
     nav_contact: "Contact",
+    nav_language: "Language",
     hero_eyebrow: "Cinematic. Elegant. Timeless.",
     hero_title: "Shyam Videography & Photography",
     hero_desc: "We provide professional photography and videography services to capture your special moments beautifully.",
     btn_call: "Call Now",
     btn_gallery: "View Gallery",
-    btn_book: "Book Now",
+    btn_enquiry: "Send Enquiry",
     btn_direction: "Get Direction",
     btn_whatsapp: "WhatsApp Chat",
     btn_select_date: "Select Event Date",
+    btn_enquiry_send: "Send Enquiry",
     about_title: "About Us",
     about_sub: "Shyam Videography and Photography",
-    about_body: "Shyam Videography and Photography is a professional photography and videography service dedicated to capturing the beautiful moments of weddings, pre-wedding shoots, and family events. Our team uses modern camera technology and creative techniques to capture every special moment perfectly. Our goal is to turn your most important life moments into memories that you can cherish forever.",
+    about_body: "Shyam Videography and Photography is a trusted and professional photography and videography service dedicated to capturing the most beautiful moments of weddings, pre-wedding shoots, engagements, and family events. Our team combines modern camera technology, creative vision, and professional experience to make every event memorable. Our goal is not just to take photos or videos, but to turn your special life moments into timeless memories that you and your family can cherish forever. We believe in delivering quality, trust, and creativity in every project we work on.",
     gallery_title: "Bihari Wedding Gallery",
     gallery_sub: "A glimpse of Bihar's wedding traditions and rituals.",
     cat_all: "All",
@@ -126,8 +135,8 @@
     service_4: "Pre Wedding Shoot",
     service_5: "Birthday Event Shoot",
     service_6: "Cinematic Video Editing",
-    booking_title: "Book Your Date",
-    booking_sub: "Reserve your date now for a seamless experience.",
+    enquiry_title: "Send an Enquiry",
+    enquiry_sub: "Tell us your requirements and we will contact you soon.",
     form_name: "Name",
     form_phone: "Phone Number",
     form_event: "Event Type",
@@ -140,12 +149,17 @@
     form_event_date_ph: "Select from calendar",
     form_location_ph: "Event location",
     form_message_ph: "Share your details",
-    cal_available: "Available for Booking",
-    cal_shubh: "Shubh Vivah Date",
+    cal_available: "Available Date",
+    cal_shubh: "Auspicious Wedding Date",
     cal_normal: "Normal Date",
-    cal_booked: "Booked / Unavailable",
-    cal_select_prompt: "Please select an available date.",
-    cal_booked_note: "This date is booked.",
+    cal_enquired: "Enquired Date",
+    cal_unavailable: "Unavailable Date",
+    cal_select_prompt: "Please select a date.",
+    cal_label_date: "Date",
+    cal_label_status: "Status",
+    cal_label_muhurat: "Muhurat",
+    cal_label_enquiries: "Enquiries",
+    cal_muhurat_na: "Muhurat details not available",
     reviews_title: "Customer Reviews",
     reviews_sub: "Their smiles tell our story.",
     review_1: "Very good photography and professional service.",
@@ -158,7 +172,7 @@
     contact_sub: "Connect with us and make your event unforgettable.",
     contact_phone: "Phone",
     contact_address: "Address",
-    success_msg: "Your WhatsApp message is ready to send.",
+    success_msg: "Your enquiry message is ready on WhatsApp.",
     select_date_error: "Please select a date from the calendar first."
   }
 };
@@ -221,9 +235,78 @@ const galleryItems = [
   }
 ];
 
-const STORAGE_KEY = "svp-booking-calendar";
-const BOOKINGS_KEY = "svp-bookings";
-const DEFAULT_MUHURAT_DATES = [];
+// Vivah Muhurat dates 2026 (SmartPuja list verified with Drik Panchang).
+const MUHURAT_2026 = {
+  "2026-01-14": { nakshatra: "Anuradha" },
+  "2026-01-23": { nakshatra: "Uttara Bhadrapada" },
+  "2026-01-25": { nakshatra: "Revati" },
+  "2026-01-28": { nakshatra: "Rohini" },
+  "2026-02-05": { nakshatra: "Uttara Phalguni" },
+  "2026-02-06": { nakshatra: "Hasta" },
+  "2026-02-08": { nakshatra: "Swati" },
+  "2026-02-10": { nakshatra: "Anuradha" },
+  "2026-02-12": { nakshatra: "Mula" },
+  "2026-02-14": { nakshatra: "Uttara Ashadha" },
+  "2026-02-19": { nakshatra: "Uttara Bhadrapada" },
+  "2026-02-20": { nakshatra: "Uttara Bhadrapada" },
+  "2026-02-21": { nakshatra: "Revati" },
+  "2026-02-24": { nakshatra: "Rohini" },
+  "2026-02-25": { nakshatra: "Mrigashira" },
+  "2026-02-26": { nakshatra: "Mrigashira" },
+  "2026-03-01": { nakshatra: "Magha" },
+  "2026-03-03": { nakshatra: "Purva Phalguni" },
+  "2026-03-04": { nakshatra: "Uttara Phalguni" },
+  "2026-03-07": { nakshatra: "Swati" },
+  "2026-03-08": { nakshatra: "Swati" },
+  "2026-03-09": { nakshatra: "Anuradha" },
+  "2026-03-11": { nakshatra: "Mula" },
+  "2026-03-12": { nakshatra: "Mula" },
+  "2026-04-15": { nakshatra: "Uttara Bhadrapada" },
+  "2026-04-20": { nakshatra: "Rohini" },
+  "2026-04-21": { nakshatra: "Mrigashira" },
+  "2026-04-25": { nakshatra: "Magha" },
+  "2026-04-26": { nakshatra: "Magha" },
+  "2026-04-27": { nakshatra: "Uttara Phalguni" },
+  "2026-04-28": { nakshatra: "Uttara Phalguni" },
+  "2026-04-29": { nakshatra: "Hasta" },
+  "2026-05-01": { nakshatra: "Swati" },
+  "2026-05-03": { nakshatra: "Anuradha" },
+  "2026-05-05": { nakshatra: "Mula" },
+  "2026-05-06": { nakshatra: "Mula" },
+  "2026-05-07": { nakshatra: "Uttara Ashadha" },
+  "2026-05-08": { nakshatra: "Uttara Ashadha" },
+  "2026-05-13": { nakshatra: "Uttara Bhadrapada" },
+  "2026-05-14": { nakshatra: "Revati" },
+  "2026-06-21": { nakshatra: "Uttara Phalguni" },
+  "2026-06-22": { nakshatra: "Uttara Phalguni" },
+  "2026-06-23": { nakshatra: "Hasta" },
+  "2026-06-24": { nakshatra: "Chitra" },
+  "2026-06-25": { nakshatra: "Swati" },
+  "2026-06-26": { nakshatra: "Swati" },
+  "2026-06-27": { nakshatra: "Anuradha" },
+  "2026-06-29": { nakshatra: "Mula" },
+  "2026-07-01": { nakshatra: "Uttara Ashadha" },
+  "2026-07-06": { nakshatra: "Uttara Bhadrapada" },
+  "2026-07-07": { nakshatra: "Uttara Bhadrapada" },
+  "2026-07-11": { nakshatra: "Rohini" },
+  "2026-11-21": { nakshatra: "Revati" },
+  "2026-11-24": { nakshatra: "Rohini" },
+  "2026-11-25": { nakshatra: "Rohini" },
+  "2026-11-26": { nakshatra: "Mrigashira" },
+  "2026-12-02": { nakshatra: "Uttara Phalguni" },
+  "2026-12-03": { nakshatra: "Hasta" },
+  "2026-12-04": { nakshatra: "Chitra" },
+  "2026-12-05": { nakshatra: "Swati" },
+  "2026-12-06": { nakshatra: "Swati" },
+  "2026-12-11": { nakshatra: "Mula" },
+  "2026-12-12": { nakshatra: "Uttara Ashadha" }
+};
+
+const ENQUIRY_KEY = "svp-enquiries";
+const LEGACY_ENQUIRY_KEY = "svp-bookings";
+const MUHURAT_YEAR = 2026;
+const MUHURAT_MONTH_MIN = 0;
+const MUHURAT_MONTH_MAX = 11;
 
 const galleryGrid = document.getElementById("galleryGrid");
 const lightbox = document.getElementById("lightbox");
@@ -233,12 +316,13 @@ const videoLightbox = document.getElementById("videoLightbox");
 const videoFrame = document.getElementById("videoFrame");
 const videoCaption = document.getElementById("videoCaption");
 const formSuccess = document.getElementById("formSuccess");
-const bookingForm = document.getElementById("bookingForm");
+const enquiryForm = document.getElementById("enquiryForm");
 const selectedDateInput = document.getElementById("selectedDate");
 const calendarTitle = document.getElementById("calendarTitle");
 const calendarWeekdays = document.getElementById("calendarWeekdays");
 const calendarGrid = document.getElementById("calendarGrid");
 const calendarNote = document.getElementById("calendarNote");
+const calendarDetail = document.getElementById("calendarDetail");
 const calendarPanel = document.getElementById("calendarPanel");
 const calendarOpenBtn = document.querySelector("[data-cal-open]");
 
@@ -248,41 +332,64 @@ let filteredItems = [...galleryItems];
 let activeIndex = 0;
 let calendarMonth = new Date();
 let selectedDate = "";
+let currentEnquiryMap = {};
 
 function getLocale(lang) {
   return lang === "hi" ? "hi-IN" : "en-IN";
 }
 
-function applyMuhuratDates(data) {
-  if (!DEFAULT_MUHURAT_DATES.length) {
-    return data;
+function padDate(value) {
+  return String(value).padStart(2, "0");
+}
+
+function clampCalendarMonth(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+
+  if (year < MUHURAT_YEAR) {
+    return new Date(MUHURAT_YEAR, MUHURAT_MONTH_MIN, 1);
   }
-  const updated = { ...data };
-  DEFAULT_MUHURAT_DATES.forEach((date) => {
-    if (!updated[date]) {
-      updated[date] = { status: "shubh", details: "Vivah Muhurat" };
-    }
-  });
-  return updated;
+  if (year > MUHURAT_YEAR) {
+    return new Date(MUHURAT_YEAR, MUHURAT_MONTH_MAX, 1);
+  }
+  const safeMonth = Math.min(Math.max(month, MUHURAT_MONTH_MIN), MUHURAT_MONTH_MAX);
+  return new Date(MUHURAT_YEAR, safeMonth, 1);
 }
 
-function getCalendarStatus(entry) {
-  if (!entry) return "normal";
-  const status = entry.status || entry.availability || "normal";
-  if (status === "booked") return "booked";
-  if (status === "shubh") return "shubh";
-  if (status === "available") return "available";
-  return "normal";
+function isMuhuratDate(key) {
+  return Boolean(MUHURAT_2026[key]);
 }
 
-function loadCalendarData() {
+function loadEnquiries() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    const data = raw ? JSON.parse(raw) : {};
-    return applyMuhuratDates(data);
+    const raw = localStorage.getItem(ENQUIRY_KEY) || localStorage.getItem(LEGACY_ENQUIRY_KEY);
+    const data = raw ? JSON.parse(raw) : [];
+    if (!localStorage.getItem(ENQUIRY_KEY) && raw) {
+      localStorage.setItem(ENQUIRY_KEY, raw);
+    }
+    return data;
   } catch (error) {
-    return {};
+    return [];
   }
+}
+
+function saveEnquiries(enquiries) {
+  localStorage.setItem(ENQUIRY_KEY, JSON.stringify(enquiries));
+}
+
+function getEnquiryMap(enquiries) {
+  return enquiries.reduce((acc, enquiry) => {
+    if (!enquiry.eventDate) return acc;
+    if (!acc[enquiry.eventDate]) {
+      acc[enquiry.eventDate] = [];
+    }
+    acc[enquiry.eventDate].push(enquiry);
+    return acc;
+  }, {});
+}
+
+function getCalendarStatus(key) {
+  return isMuhuratDate(key) ? "shubh" : "normal";
 }
 
 function openWhatsAppLink(url) {
@@ -294,21 +401,43 @@ function openWhatsAppLink(url) {
   }
 }
 
-function loadBookings() {
-  try {
-    const raw = localStorage.getItem(BOOKINGS_KEY);
-    return raw ? JSON.parse(raw) : [];
-  } catch (error) {
-    return [];
-  }
-}
-
-function saveBookings(bookings) {
-  localStorage.setItem(BOOKINGS_KEY, JSON.stringify(bookings));
-}
-
 function getDateKey(date) {
-  return date.toISOString().split("T")[0];
+  return `${date.getFullYear()}-${padDate(date.getMonth() + 1)}-${padDate(date.getDate())}`;
+}
+
+function getDisplayDate(key) {
+  if (!key) return "";
+  const [year, month, day] = key.split("-").map(Number);
+  const date = new Date(year, month - 1, day);
+  return date.toLocaleDateString(getLocale(currentLang), {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+}
+
+function getStatusLabel(status, enquiredCount) {
+  const labels = [];
+  if (status === "shubh") {
+    labels.push(translations[currentLang].cal_shubh);
+  } else {
+    labels.push(translations[currentLang].cal_normal);
+  }
+
+  if (enquiredCount > 0) {
+    labels.push(translations[currentLang].cal_enquired);
+  }
+
+  return labels.join(" • ");
+}
+
+function getMuhuratDetail(key) {
+  const muhurat = MUHURAT_2026[key];
+  if (!muhurat) {
+    return translations[currentLang].cal_muhurat_na;
+  }
+  const label = currentLang === "hi" ? "नक्षत्र" : "Nakshatra";
+  return `${label}: ${muhurat.nakshatra}`;
 }
 
 function setLanguage(lang) {
@@ -449,9 +578,11 @@ function renderWeekdays(locale) {
 function renderCalendar() {
   if (!calendarGrid || !calendarTitle) return;
   const locale = getLocale(currentLang);
-  const data = loadCalendarData();
+  const enquiries = loadEnquiries();
+  currentEnquiryMap = getEnquiryMap(enquiries);
   calendarGrid.innerHTML = "";
 
+  calendarMonth = clampCalendarMonth(calendarMonth);
   const monthStart = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth(), 1);
   const monthEnd = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, 0);
   const startDay = monthStart.getDay();
@@ -476,25 +607,24 @@ function renderCalendar() {
     cell.className = "calendar-day";
     cell.textContent = String(day);
 
-    const entry = data[key];
-    const status = getCalendarStatus(entry);
+    const status = getCalendarStatus(key);
+    const enquiredCount = currentEnquiryMap[key]?.length || 0;
     const isPast = key < todayKey;
 
     if (isPast) {
       cell.classList.add("is-muted");
       cell.disabled = true;
-    } else if (status === "booked") {
-      cell.classList.add("is-booked");
-      cell.disabled = true;
     } else {
       if (status === "shubh") {
         cell.classList.add("is-shubh");
-      } else if (status === "available") {
-        cell.classList.add("is-available");
       } else {
         cell.classList.add("is-normal");
       }
-      cell.addEventListener("click", () => selectCalendarDate(key, entry));
+      cell.addEventListener("click", () => selectCalendarDate(key));
+    }
+
+    if (enquiredCount > 0) {
+      cell.classList.add("is-enquired");
     }
 
     if (selectedDate === key) {
@@ -504,45 +634,53 @@ function renderCalendar() {
     calendarGrid.appendChild(cell);
   }
 
-  updateCalendarNote(selectedDate, data[selectedDate]);
+  updateCalendarNote(selectedDate);
+  updateCalendarNavState();
 }
 
-function selectCalendarDate(key, entry) {
+function updateCalendarNavState() {
+  if (!calPrev || !calNext) return;
+  calPrev.disabled =
+    calendarMonth.getFullYear() === MUHURAT_YEAR && calendarMonth.getMonth() === MUHURAT_MONTH_MIN;
+  calNext.disabled =
+    calendarMonth.getFullYear() === MUHURAT_YEAR && calendarMonth.getMonth() === MUHURAT_MONTH_MAX;
+}
+
+function selectCalendarDate(key) {
   selectedDate = key;
   if (selectedDateInput) {
     selectedDateInput.value = key;
   }
-  updateCalendarNote(key, entry);
+  updateCalendarNote(key);
   renderCalendar();
 }
 
-function updateCalendarNote(key, entry) {
+function updateCalendarNote(key) {
   if (!calendarNote) return;
   if (!key) {
     calendarNote.textContent = translations[currentLang].cal_select_prompt;
+    if (calendarDetail) {
+      calendarDetail.innerHTML = "";
+    }
     return;
   }
 
-  const status = getCalendarStatus(entry);
+  const status = getCalendarStatus(key);
+  const enquiredCount = currentEnquiryMap[key]?.length || 0;
+  const statusLabel = getStatusLabel(status, enquiredCount);
 
-  if (status === "booked") {
-    calendarNote.textContent = entry?.details
-      ? `${translations[currentLang].cal_booked_note} ${entry.details}`
-      : translations[currentLang].cal_booked_note;
-    return;
+  calendarNote.textContent = statusLabel;
+
+  if (calendarDetail) {
+    const detailText = getMuhuratDetail(key);
+    const enquiryText = enquiredCount ? String(enquiredCount) : "0";
+    calendarDetail.innerHTML = `
+      <div><strong>${translations[currentLang].cal_label_date}:</strong> ${getDisplayDate(key)}</div>
+      <div><strong>${translations[currentLang].cal_label_status}:</strong> ${statusLabel}</div>
+      <div><strong>${translations[currentLang].cal_label_muhurat}:</strong> ${detailText}</div>
+      <div><strong>${translations[currentLang].cal_label_enquiries}:</strong> ${enquiryText}</div>
+    `;
   }
-
-  if (status === "shubh") {
-    calendarNote.textContent = translations[currentLang].cal_shubh;
-    return;
-  }
-
-  if (status === "available") {
-    calendarNote.textContent = translations[currentLang].cal_available;
-    return;
-  }
-
-  calendarNote.textContent = translations[currentLang].cal_normal;
 }
 
 function focusCalendarPanel() {
@@ -560,13 +698,48 @@ if (selectedDateInput) {
   selectedDateInput.addEventListener("focus", focusCalendarPanel);
 }
 
+function spawnParticles(target) {
+  if (!target) return;
+  const count = 12;
+  for (let i = 0; i < count; i += 1) {
+    const particle = document.createElement("span");
+    particle.className = "particle";
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 16 + Math.random() * 22;
+    const size = 3 + Math.random() * 3;
+    const duration = 500 + Math.random() * 300;
+    const dx = `${Math.cos(angle) * distance}px`;
+    const dy = `${Math.sin(angle) * distance}px`;
+    particle.style.setProperty("--dx", dx);
+    particle.style.setProperty("--dy", dy);
+    particle.style.setProperty("--size", `${size}px`);
+    particle.style.setProperty("--duration", `${duration}ms`);
+    target.appendChild(particle);
+    window.setTimeout(() => particle.remove(), duration + 80);
+  }
+}
+
+document.addEventListener("click", (event) => {
+  const btn = event.target.closest(".btn, .float-btn");
+  if (btn) {
+    spawnParticles(btn);
+  }
+});
+
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
+const langTrigger = document.querySelector(".lang-trigger");
+const langMenu = document.querySelector(".lang-menu");
+const langItem = document.querySelector(".nav-lang");
 
 if (navToggle && navLinks) {
   navToggle.addEventListener("click", () => {
     const isOpen = navLinks.classList.toggle("open");
     navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    if (!isOpen && langItem) {
+      langItem.classList.remove("open");
+      langTrigger?.setAttribute("aria-expanded", "false");
+    }
   });
 
   navLinks.querySelectorAll("a").forEach((link) => {
@@ -574,6 +747,21 @@ if (navToggle && navLinks) {
       navLinks.classList.remove("open");
       navToggle.setAttribute("aria-expanded", "false");
     });
+  });
+}
+
+if (langTrigger && langItem) {
+  langTrigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    const isOpen = langItem.classList.toggle("open");
+    langTrigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!langItem.contains(event.target)) {
+      langItem.classList.remove("open");
+      langTrigger.setAttribute("aria-expanded", "false");
+    }
   });
 }
 
@@ -590,15 +778,54 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-if (bookingForm) {
-  bookingForm.addEventListener("submit", (event) => {
+const sectionLinks = Array.from(document.querySelectorAll(".nav-links a[href^='#']"));
+const sectionMap = new Map();
+
+sectionLinks.forEach((link) => {
+  const id = link.getAttribute("href")?.replace("#", "");
+  if (id) {
+    sectionMap.set(id, link);
+  }
+});
+
+const sections = Array.from(sectionMap.keys())
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
+
+function setActiveNav(link) {
+  sectionLinks.forEach((item) => item.classList.remove("active"));
+  if (link) link.classList.add("active");
+}
+
+if (sections.length > 0) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const activeLink = sectionMap.get(entry.target.id);
+          setActiveNav(activeLink);
+        }
+      });
+    },
+    { rootMargin: "-45% 0px -45% 0px", threshold: 0.1 }
+  );
+
+  sections.forEach((section) => sectionObserver.observe(section));
+}
+
+sectionLinks.forEach((link) => {
+  link.addEventListener("click", () => setActiveNav(link));
+});
+
+if (enquiryForm) {
+  enquiryForm.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!selectedDate) {
       formSuccess.textContent = translations[currentLang].select_date_error;
       return;
     }
 
-    const formData = new FormData(bookingForm);
+    const formData = new FormData(enquiryForm);
     const name = String(formData.get("name") || "").trim();
     const phone = String(formData.get("phone") || "").trim();
     const eventType = String(formData.get("event") || "").trim();
@@ -606,7 +833,7 @@ if (bookingForm) {
     const location = String(formData.get("location") || "").trim();
     const message = String(formData.get("message") || "").trim();
 
-    const booking = {
+    const enquiry = {
       id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
       name,
       phone,
@@ -618,9 +845,9 @@ if (bookingForm) {
       createdAt: new Date().toISOString()
     };
 
-    const bookings = loadBookings();
-    bookings.unshift(booking);
-    saveBookings(bookings);
+    const enquiries = loadEnquiries();
+    enquiries.unshift(enquiry);
+    saveEnquiries(enquiries);
 
     const whatsappMessage = [
       `Name: ${name}`,
@@ -635,7 +862,7 @@ if (bookingForm) {
     openWhatsAppLink(whatsappUrl);
 
     formSuccess.textContent = translations[currentLang].success_msg;
-    bookingForm.reset();
+    enquiryForm.reset();
     selectedDate = "";
     if (selectedDateInput) {
       selectedDateInput.value = "";
@@ -690,7 +917,19 @@ filterButtons.forEach((btn) => {
 });
 
 document.querySelectorAll(".lang-btn").forEach((btn) => {
-  btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  btn.addEventListener("click", () => {
+    setLanguage(btn.dataset.lang);
+    if (langItem) {
+      langItem.classList.remove("open");
+    }
+    if (langTrigger) {
+      langTrigger.setAttribute("aria-expanded", "false");
+    }
+    if (navLinks?.classList.contains("open")) {
+      navLinks.classList.remove("open");
+      navToggle?.setAttribute("aria-expanded", "false");
+    }
+  });
 });
 
 document.querySelectorAll(".video-trigger").forEach((card) => {
@@ -702,24 +941,26 @@ const calNext = document.querySelector("[data-cal-next]");
 
 if (calPrev) {
   calPrev.addEventListener("click", () => {
-    calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, 1);
+    calendarMonth = clampCalendarMonth(new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, 1));
     renderCalendar();
   });
 }
 
 if (calNext) {
   calNext.addEventListener("click", () => {
-    calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, 1);
+    calendarMonth = clampCalendarMonth(new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, 1));
     renderCalendar();
   });
 }
 
 window.addEventListener("storage", (event) => {
-  if (event.key === STORAGE_KEY) {
+  if (event.key === ENQUIRY_KEY) {
     renderCalendar();
   }
 });
 
+calendarMonth = clampCalendarMonth(calendarMonth);
 setLanguage("hi");
 renderGallery(activeFilter);
 renderCalendar();
+

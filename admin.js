@@ -1,8 +1,79 @@
-﻿const STORAGE_KEY = "svp-booking-calendar";
-const BOOKINGS_KEY = "svp-bookings";
+const ENQUIRY_KEY = "svp-enquiries";
+const LEGACY_ENQUIRY_KEY = "svp-bookings";
 const ADMIN_AUTH_KEY = "svp-admin-auth";
 const ADMIN_USER = "8507374062";
 const ADMIN_PASS = "Raushan123@";
+
+// Vivah Muhurat dates 2026 (SmartPuja list verified with Drik Panchang).
+const MUHURAT_2026 = {
+  "2026-01-14": { nakshatra: "Anuradha" },
+  "2026-01-23": { nakshatra: "Uttara Bhadrapada" },
+  "2026-01-25": { nakshatra: "Revati" },
+  "2026-01-28": { nakshatra: "Rohini" },
+  "2026-02-05": { nakshatra: "Uttara Phalguni" },
+  "2026-02-06": { nakshatra: "Hasta" },
+  "2026-02-08": { nakshatra: "Swati" },
+  "2026-02-10": { nakshatra: "Anuradha" },
+  "2026-02-12": { nakshatra: "Mula" },
+  "2026-02-14": { nakshatra: "Uttara Ashadha" },
+  "2026-02-19": { nakshatra: "Uttara Bhadrapada" },
+  "2026-02-20": { nakshatra: "Uttara Bhadrapada" },
+  "2026-02-21": { nakshatra: "Revati" },
+  "2026-02-24": { nakshatra: "Rohini" },
+  "2026-02-25": { nakshatra: "Mrigashira" },
+  "2026-02-26": { nakshatra: "Mrigashira" },
+  "2026-03-01": { nakshatra: "Magha" },
+  "2026-03-03": { nakshatra: "Purva Phalguni" },
+  "2026-03-04": { nakshatra: "Uttara Phalguni" },
+  "2026-03-07": { nakshatra: "Swati" },
+  "2026-03-08": { nakshatra: "Swati" },
+  "2026-03-09": { nakshatra: "Anuradha" },
+  "2026-03-11": { nakshatra: "Mula" },
+  "2026-03-12": { nakshatra: "Mula" },
+  "2026-04-15": { nakshatra: "Uttara Bhadrapada" },
+  "2026-04-20": { nakshatra: "Rohini" },
+  "2026-04-21": { nakshatra: "Mrigashira" },
+  "2026-04-25": { nakshatra: "Magha" },
+  "2026-04-26": { nakshatra: "Magha" },
+  "2026-04-27": { nakshatra: "Uttara Phalguni" },
+  "2026-04-28": { nakshatra: "Uttara Phalguni" },
+  "2026-04-29": { nakshatra: "Hasta" },
+  "2026-05-01": { nakshatra: "Swati" },
+  "2026-05-03": { nakshatra: "Anuradha" },
+  "2026-05-05": { nakshatra: "Mula" },
+  "2026-05-06": { nakshatra: "Mula" },
+  "2026-05-07": { nakshatra: "Uttara Ashadha" },
+  "2026-05-08": { nakshatra: "Uttara Ashadha" },
+  "2026-05-13": { nakshatra: "Uttara Bhadrapada" },
+  "2026-05-14": { nakshatra: "Revati" },
+  "2026-06-21": { nakshatra: "Uttara Phalguni" },
+  "2026-06-22": { nakshatra: "Uttara Phalguni" },
+  "2026-06-23": { nakshatra: "Hasta" },
+  "2026-06-24": { nakshatra: "Chitra" },
+  "2026-06-25": { nakshatra: "Swati" },
+  "2026-06-26": { nakshatra: "Swati" },
+  "2026-06-27": { nakshatra: "Anuradha" },
+  "2026-06-29": { nakshatra: "Mula" },
+  "2026-07-01": { nakshatra: "Uttara Ashadha" },
+  "2026-07-06": { nakshatra: "Uttara Bhadrapada" },
+  "2026-07-07": { nakshatra: "Uttara Bhadrapada" },
+  "2026-07-11": { nakshatra: "Rohini" },
+  "2026-11-21": { nakshatra: "Revati" },
+  "2026-11-24": { nakshatra: "Rohini" },
+  "2026-11-25": { nakshatra: "Rohini" },
+  "2026-11-26": { nakshatra: "Mrigashira" },
+  "2026-12-02": { nakshatra: "Uttara Phalguni" },
+  "2026-12-03": { nakshatra: "Hasta" },
+  "2026-12-04": { nakshatra: "Chitra" },
+  "2026-12-05": { nakshatra: "Swati" },
+  "2026-12-06": { nakshatra: "Swati" },
+  "2026-12-11": { nakshatra: "Mula" },
+  "2026-12-12": { nakshatra: "Uttara Ashadha" }
+};
+
+const MUHURAT_YEAR = 2026;
+const MUHURAT_MONTH_MIN = 0;
+const MUHURAT_MONTH_MAX = 11;
 
 const adminLogin = document.getElementById("adminLogin");
 const adminLoginForm = document.getElementById("adminLoginForm");
@@ -11,13 +82,18 @@ const adminDashboard = document.getElementById("adminDashboard");
 const logoutBtn = document.getElementById("logoutBtn");
 const adminNav = document.getElementById("adminNav");
 
-const adminForm = document.getElementById("adminForm");
-const calendarList = document.getElementById("calendarList");
-const bookingList = document.getElementById("bookingList");
-const clearDateButton = document.getElementById("clearDate");
-const reportSummary = document.getElementById("reportSummary");
-const reportTable = document.getElementById("reportTable");
-const downloadReport = document.getElementById("downloadReport");
+const enquiryList = document.getElementById("enquiryList");
+
+const adminCalendarTitle = document.getElementById("adminCalendarTitle");
+const adminCalendarWeekdays = document.getElementById("adminCalendarWeekdays");
+const adminCalendarGrid = document.getElementById("adminCalendarGrid");
+const adminCalendarNote = document.getElementById("adminCalendarNote");
+const adminCalendarDetail = document.getElementById("adminCalendarDetail");
+const adminCalPrev = document.querySelector("[data-admin-cal-prev]");
+const adminCalNext = document.querySelector("[data-admin-cal-next]");
+
+let adminCalendarMonth = new Date();
+let adminSelectedDate = "";
 
 function isAuthenticated() {
   return localStorage.getItem(ADMIN_AUTH_KEY) === "true";
@@ -39,259 +115,324 @@ function showLogin() {
   if (adminNav) adminNav.style.display = "none";
 }
 
-function loadCalendarData() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch (error) {
-    return {};
+function padDate(value) {
+  return String(value).padStart(2, "0");
+}
+
+function clampCalendarMonth(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+
+  if (year < MUHURAT_YEAR) {
+    return new Date(MUHURAT_YEAR, MUHURAT_MONTH_MIN, 1);
   }
+  if (year > MUHURAT_YEAR) {
+    return new Date(MUHURAT_YEAR, MUHURAT_MONTH_MAX, 1);
+  }
+  const safeMonth = Math.min(Math.max(month, MUHURAT_MONTH_MIN), MUHURAT_MONTH_MAX);
+  return new Date(MUHURAT_YEAR, safeMonth, 1);
 }
 
-function saveCalendarData(data) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+function isMuhuratDate(key) {
+  return Boolean(MUHURAT_2026[key]);
 }
 
-function loadBookings() {
+function loadEnquiries() {
   try {
-    const raw = localStorage.getItem(BOOKINGS_KEY);
-    return raw ? JSON.parse(raw) : [];
+    const raw = localStorage.getItem(ENQUIRY_KEY) || localStorage.getItem(LEGACY_ENQUIRY_KEY);
+    const data = raw ? JSON.parse(raw) : [];
+    if (!localStorage.getItem(ENQUIRY_KEY) && raw) {
+      localStorage.setItem(ENQUIRY_KEY, raw);
+    }
+    return data;
   } catch (error) {
     return [];
   }
 }
 
-function saveBookings(bookings) {
-  localStorage.setItem(BOOKINGS_KEY, JSON.stringify(bookings));
+function saveEnquiries(enquiries) {
+  localStorage.setItem(ENQUIRY_KEY, JSON.stringify(enquiries));
 }
 
-function normalizePhone(phone) {
-  const digits = String(phone || "").replace(/\D/g, "");
-  if (digits.length === 10) {
-    return `91${digits}`;
-  }
-  if (digits.startsWith("91")) {
-    return digits;
-  }
-  return digits;
+function getCalendarStatus(key) {
+  return isMuhuratDate(key) ? "shubh" : "normal";
 }
 
-function buildConfirmationMessage(booking, lang) {
-  if (lang === "hi") {
-    return `नमस्ते,\n\nआपकी बुकिंग सफलतापूर्वक कन्फर्म हो गई है।\n\nबुकिंग विवरण:\n\nनाम: ${booking.name}\nमोबाइल नंबर: ${booking.phone}\nइवेंट प्रकार: ${booking.eventType}\nइवेंट की तारीख: ${booking.eventDate}\nस्थान: ${booking.location}\n\nहमारी टीम आपके इस खास अवसर को यादगार बनाने के लिए पूरी तरह तैयार है।\n\nधन्यवाद,\nShyam Videography and Photography`;
+function getStatusLabel(status, enquiredCount) {
+  const labels = [];
+  if (status === "shubh") {
+    labels.push("Shubh Vivah Tithi");
+  } else {
+    labels.push("Normal Date");
   }
 
-  return `Hello,\n\nYour booking has been successfully confirmed.\n\nBooking Details:\n\nName: ${booking.name}\nPhone Number: ${booking.phone}\nEvent Type: ${booking.eventType}\nEvent Date: ${booking.eventDate}\nLocation: ${booking.location}\n\nOur team is ready to make your special occasion memorable.\n\nThank you,\nShyam Videography and Photography`;
-}
-
-function openWhatsApp(phone, message) {
-  const normalized = normalizePhone(phone);
-  if (!normalized) return;
-  const url = `https://wa.me/${normalized}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank", "noopener");
-}
-
-function getStatusLabel(status) {
-  if (status === "booked") return "Booked";
-  if (status === "available") return "Available";
-  if (status === "shubh") return "Shubh Vivah Tithi";
-  if (status === "normal") return "Normal Date";
-  return "Available";
-}
-
-function renderCalendarList() {
-  const data = loadCalendarData();
-  const entries = Object.entries(data).sort(([a], [b]) => (a > b ? 1 : -1));
-  calendarList.innerHTML = "";
-
-  if (entries.length === 0) {
-    calendarList.innerHTML = '<div class="admin-item">No calendar entries yet.</div>';
-    return;
+  if (enquiredCount > 0) {
+    labels.push("Enquired");
   }
 
-  entries.forEach(([date, entry]) => {
-    const item = document.createElement("div");
-    item.className = "admin-item";
-    const statusLabel = getStatusLabel(entry.status);
-    item.innerHTML = `
-      <strong>${date}</strong>
-      <span>Status: ${statusLabel}</span>
-      <span>${entry.details || "No details"}</span>
-    `;
-    calendarList.appendChild(item);
+  return labels.join(" • ");
+}
+
+function getDateKey(date) {
+  return `${date.getFullYear()}-${padDate(date.getMonth() + 1)}-${padDate(date.getDate())}`;
+}
+
+function getDisplayDate(key) {
+  if (!key) return "";
+  const [year, month, day] = key.split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
   });
 }
 
-function updateCalendarForConfirmed(booking) {
-  const calendarData = loadCalendarData();
-  calendarData[booking.eventDate] = {
-    status: "booked",
-    details: `${booking.name} - ${booking.eventType}`
-  };
-  saveCalendarData(calendarData);
+function renderWeekdays(targetEl) {
+  if (!targetEl) return;
+  targetEl.innerHTML = "";
+  const base = new Date(Date.UTC(2024, 0, 7));
+  for (let i = 0; i < 7; i += 1) {
+    const day = new Date(base.getTime() + i * 86400000);
+    const label = day.toLocaleDateString("en-IN", { weekday: "short" });
+    const span = document.createElement("span");
+    span.textContent = label;
+    targetEl.appendChild(span);
+  }
 }
 
-function updateBookingStatus(bookingId, status, sendWhatsApp, lang) {
-  const bookings = loadBookings();
-  const index = bookings.findIndex((b) => b.id === bookingId);
-  if (index === -1) return;
-
-  bookings[index].status = status;
-  saveBookings(bookings);
-
-  if (status === "confirmed") {
-    updateCalendarForConfirmed(bookings[index]);
-
-    if (sendWhatsApp) {
-      const msg = buildConfirmationMessage(bookings[index], lang);
-      openWhatsApp(bookings[index].phone, msg);
+function getEnquiryMap(enquiries) {
+  return enquiries.reduce((acc, enquiry) => {
+    if (!enquiry.eventDate) return acc;
+    if (!acc[enquiry.eventDate]) {
+      acc[enquiry.eventDate] = [];
     }
-  }
-
-  renderBookingList();
-  renderCalendarList();
-  renderReport();
+    acc[enquiry.eventDate].push(enquiry);
+    return acc;
+  }, {});
 }
 
-function updateBookingDate(bookingId) {
-  const bookings = loadBookings();
-  const index = bookings.findIndex((b) => b.id === bookingId);
-  if (index === -1) return;
+function renderAdminCalendar() {
+  if (!adminCalendarGrid || !adminCalendarTitle) return;
+  const enquiries = loadEnquiries();
+  const enquiryMap = getEnquiryMap(enquiries);
 
-  const current = bookings[index];
-  const newDate = window.prompt("Enter new event date (YYYY-MM-DD)", current.eventDate);
-  if (!newDate) return;
+  adminCalendarGrid.innerHTML = "";
+  adminCalendarMonth = clampCalendarMonth(adminCalendarMonth);
+  const monthStart = new Date(adminCalendarMonth.getFullYear(), adminCalendarMonth.getMonth(), 1);
+  const monthEnd = new Date(adminCalendarMonth.getFullYear(), adminCalendarMonth.getMonth() + 1, 0);
+  const startDay = monthStart.getDay();
+  const totalDays = monthEnd.getDate();
 
-  const calendarData = loadCalendarData();
-  const oldEntry = calendarData[current.eventDate];
-  if (oldEntry && oldEntry.status === "booked" && String(oldEntry.details || "").includes(current.name)) {
-    delete calendarData[current.eventDate];
+  adminCalendarTitle.textContent = monthStart.toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+  renderWeekdays(adminCalendarWeekdays);
+
+  for (let i = 0; i < startDay; i += 1) {
+    const empty = document.createElement("div");
+    empty.className = "calendar-day is-muted";
+    adminCalendarGrid.appendChild(empty);
   }
 
-  bookings[index].eventDate = newDate;
-  saveBookings(bookings);
+  for (let day = 1; day <= totalDays; day += 1) {
+    const date = new Date(adminCalendarMonth.getFullYear(), adminCalendarMonth.getMonth(), day);
+    const key = getDateKey(date);
+    const cell = document.createElement("button");
+    cell.type = "button";
+    cell.className = "calendar-day";
+    cell.textContent = String(day);
 
-  if (bookings[index].status === "confirmed") {
-    calendarData[newDate] = {
-      status: "booked",
-      details: `${bookings[index].name} - ${bookings[index].eventType}`
-    };
-    saveCalendarData(calendarData);
+    const status = getCalendarStatus(key);
+    const enquiredCount = enquiryMap[key]?.length || 0;
+
+    if (status === "shubh") {
+      cell.classList.add("is-shubh");
+    } else {
+      cell.classList.add("is-normal");
+    }
+
+    if (enquiredCount > 0) {
+      cell.classList.add("is-enquired");
+    }
+
+    if (adminSelectedDate === key) {
+      cell.classList.add("is-selected");
+    }
+
+    cell.addEventListener("click", () => {
+      adminSelectedDate = key;
+      updateAdminCalendarDetail(key, enquiryMap[key] || []);
+      renderAdminCalendar();
+    });
+
+    adminCalendarGrid.appendChild(cell);
   }
 
-  renderBookingList();
-  renderCalendarList();
-  renderReport();
+  if (!adminSelectedDate) {
+    updateAdminCalendarDetail("", []);
+  }
+
+  updateAdminNavState();
 }
 
-function renderBookingList() {
-  const bookings = loadBookings();
-  bookingList.innerHTML = "";
+function updateAdminNavState() {
+  if (!adminCalPrev || !adminCalNext) return;
+  adminCalPrev.disabled =
+    adminCalendarMonth.getFullYear() === MUHURAT_YEAR && adminCalendarMonth.getMonth() === MUHURAT_MONTH_MIN;
+  adminCalNext.disabled =
+    adminCalendarMonth.getFullYear() === MUHURAT_YEAR && adminCalendarMonth.getMonth() === MUHURAT_MONTH_MAX;
+}
 
-  if (bookings.length === 0) {
-    bookingList.innerHTML = '<div class="admin-item">No bookings yet.</div>';
+function updateAdminCalendarDetail(key, enquiries) {
+  if (!adminCalendarNote || !adminCalendarDetail) return;
+  if (!key) {
+    adminCalendarNote.textContent = "Select a date to view muhurat and enquiries.";
+    adminCalendarDetail.innerHTML = "";
     return;
   }
 
-  bookings.forEach((booking) => {
+  const status = getCalendarStatus(key);
+  const statusLabel = getStatusLabel(status, enquiries.length);
+  const muhurat = MUHURAT_2026[key] ? `Nakshatra: ${MUHURAT_2026[key].nakshatra}` : "-";
+  const enquiryNames = enquiries.length
+    ? enquiries.map((e) => `${e.name} (${e.eventType})`).join(", ")
+    : "No enquiries";
+
+  adminCalendarNote.textContent = statusLabel;
+  adminCalendarDetail.innerHTML = `
+    <div><strong>Date:</strong> ${getDisplayDate(key)}</div>
+    <div><strong>Status:</strong> ${statusLabel}</div>
+    <div><strong>Muhurat:</strong> ${muhurat}</div>
+    <div><strong>Enquiries:</strong> ${enquiryNames}</div>
+  `;
+}
+
+function updateEnquiryStatus(enquiryId, status) {
+  const enquiries = loadEnquiries();
+  const index = enquiries.findIndex((e) => e.id === enquiryId);
+  if (index === -1) return;
+
+  enquiries[index].status = status;
+  saveEnquiries(enquiries);
+  renderEnquiryList();
+  renderAdminCalendar();
+}
+
+function updateEnquiryDate(enquiryId) {
+  const enquiries = loadEnquiries();
+  const index = enquiries.findIndex((e) => e.id === enquiryId);
+  if (index === -1) return;
+
+  const current = enquiries[index];
+  const newDate = window.prompt("Enter new event date (YYYY-MM-DD)", current.eventDate);
+  if (!newDate) return;
+
+  enquiries[index].eventDate = newDate;
+  saveEnquiries(enquiries);
+  renderEnquiryList();
+  renderAdminCalendar();
+}
+
+function deleteEnquiry(enquiryId) {
+  const enquiries = loadEnquiries();
+  const filtered = enquiries.filter((e) => e.id !== enquiryId);
+  saveEnquiries(filtered);
+  renderEnquiryList();
+  renderAdminCalendar();
+}
+
+function renderEnquiryList() {
+  const enquiries = loadEnquiries();
+  enquiryList.innerHTML = "";
+
+  if (enquiries.length === 0) {
+    enquiryList.innerHTML = '<div class="admin-item">No enquiries yet.</div>';
+    return;
+  }
+
+  enquiries.forEach((enquiry) => {
     const card = document.createElement("div");
     card.className = "booking-card";
 
-    const statusClass = booking.status === "confirmed" ? "status-confirmed" : booking.status === "rejected" ? "status-rejected" : "status-pending";
-    const statusLabel = booking.status === "confirmed" ? "Confirmed" : booking.status === "rejected" ? "Rejected" : "Pending";
+    const statusClass = enquiry.status === "contacted" ? "status-confirmed" : "status-pending";
+    const statusLabel = enquiry.status === "contacted" ? "Contacted" : "Pending";
+    const createdAt = enquiry.createdAt ? new Date(enquiry.createdAt).toLocaleString("en-IN") : "-";
 
     card.innerHTML = `
       <div class="booking-header">
-        <strong>${booking.name}</strong>
+        <strong>${enquiry.name}</strong>
         <span class="status-pill ${statusClass}">${statusLabel}</span>
       </div>
-      <div class="booking-meta">Phone: ${booking.phone}</div>
-      <div class="booking-meta">Event: ${booking.eventType}</div>
-      <div class="booking-meta">Date: ${booking.eventDate}</div>
-      <div class="booking-meta">Location: ${booking.location}</div>
-      <div class="booking-meta">Message: ${booking.message || "-"}</div>
+      <div class="booking-meta">Phone: ${enquiry.phone}</div>
+      <div class="booking-meta">Event: ${enquiry.eventType}</div>
+      <div class="booking-meta">Date: ${enquiry.eventDate}</div>
+      <div class="booking-meta">Location: ${enquiry.location}</div>
+      <div class="booking-meta">Message: ${enquiry.message || "-"}</div>
+      <div class="booking-meta">Enquiry Date: ${createdAt}</div>
     `;
 
     const actions = document.createElement("div");
     actions.className = "booking-actions";
 
-    const confirmHi = document.createElement("button");
-    confirmHi.className = "btn btn-primary";
-    confirmHi.type = "button";
-    confirmHi.textContent = "Confirm (Hindi)";
-    confirmHi.addEventListener("click", () => updateBookingStatus(booking.id, "confirmed", true, "hi"));
+    const markContacted = document.createElement("button");
+    markContacted.className = "btn btn-primary";
+    markContacted.type = "button";
+    markContacted.textContent = "Mark Contacted";
+    markContacted.addEventListener("click", () => updateEnquiryStatus(enquiry.id, "contacted"));
 
-    const confirmEn = document.createElement("button");
-    confirmEn.className = "btn btn-outline";
-    confirmEn.type = "button";
-    confirmEn.textContent = "Confirm (English)";
-    confirmEn.addEventListener("click", () => updateBookingStatus(booking.id, "confirmed", true, "en"));
+    const markPending = document.createElement("button");
+    markPending.className = "btn btn-outline";
+    markPending.type = "button";
+    markPending.textContent = "Mark Pending";
+    markPending.addEventListener("click", () => updateEnquiryStatus(enquiry.id, "pending"));
 
-    const editDate = document.createElement("button");
-    editDate.className = "btn btn-outline";
-    editDate.type = "button";
-    editDate.textContent = "Update Date";
-    editDate.addEventListener("click", () => updateBookingDate(booking.id));
+    const updateDate = document.createElement("button");
+    updateDate.className = "btn btn-outline";
+    updateDate.type = "button";
+    updateDate.textContent = "Update Date";
+    updateDate.addEventListener("click", () => updateEnquiryDate(enquiry.id));
 
-    const rejectBtn = document.createElement("button");
-    rejectBtn.className = "btn btn-outline";
-    rejectBtn.type = "button";
-    rejectBtn.textContent = "Reject";
-    rejectBtn.addEventListener("click", () => updateBookingStatus(booking.id, "rejected", false));
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "btn btn-outline";
+    deleteBtn.type = "button";
+    deleteBtn.textContent = "Delete Enquiry";
+    deleteBtn.addEventListener("click", () => deleteEnquiry(enquiry.id));
 
-    actions.appendChild(confirmHi);
-    actions.appendChild(confirmEn);
-    actions.appendChild(editDate);
-    actions.appendChild(rejectBtn);
+    actions.appendChild(markContacted);
+    actions.appendChild(markPending);
+    actions.appendChild(updateDate);
+    actions.appendChild(deleteBtn);
 
     card.appendChild(actions);
-    bookingList.appendChild(card);
+    enquiryList.appendChild(card);
   });
 }
 
-function renderReport() {
-  const bookings = loadBookings();
-  const total = bookings.length;
-  const confirmed = bookings.filter((b) => b.status === "confirmed").length;
-  const pending = bookings.filter((b) => b.status === "pending").length;
-  const rejected = bookings.filter((b) => b.status === "rejected").length;
-
-  reportSummary.innerHTML = "";
-  const summaryItems = [
-    { label: "Total Bookings", value: total },
-    { label: "Confirmed", value: confirmed },
-    { label: "Pending", value: pending },
-    { label: "Rejected", value: rejected }
-  ];
-
-  summaryItems.forEach((item) => {
-    const card = document.createElement("div");
-    card.className = "report-card";
-    card.innerHTML = `<h4>${item.label}</h4><p>${item.value}</p>`;
-    reportSummary.appendChild(card);
-  });
-
-  reportTable.innerHTML = "";
-  if (bookings.length === 0) {
-    reportTable.innerHTML = '<div class="report-row">No bookings available.</div>';
-    return;
+function spawnParticles(target) {
+  if (!target) return;
+  const count = 12;
+  for (let i = 0; i < count; i += 1) {
+    const particle = document.createElement("span");
+    particle.className = "particle";
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 16 + Math.random() * 22;
+    const size = 3 + Math.random() * 3;
+    const duration = 500 + Math.random() * 300;
+    const dx = `${Math.cos(angle) * distance}px`;
+    const dy = `${Math.sin(angle) * distance}px`;
+    particle.style.setProperty("--dx", dx);
+    particle.style.setProperty("--dy", dy);
+    particle.style.setProperty("--size", `${size}px`);
+    particle.style.setProperty("--duration", `${duration}ms`);
+    target.appendChild(particle);
+    window.setTimeout(() => particle.remove(), duration + 80);
   }
-
-  bookings.forEach((booking) => {
-    const row = document.createElement("div");
-    row.className = "report-row";
-    row.innerHTML = `
-      <strong>${booking.name}</strong>
-      <span>Phone: ${booking.phone}</span>
-      <span>Event Type: ${booking.eventType}</span>
-      <span>Event Date: ${booking.eventDate}</span>
-      <span>Location: ${booking.location}</span>
-      <span>Status: ${booking.status}</span>
-      <span>Message: ${booking.message || "-"}</span>
-    `;
-    reportTable.appendChild(row);
-  });
 }
+
+document.addEventListener("click", (event) => {
+  const btn = event.target.closest(".btn");
+  if (btn) {
+    spawnParticles(btn);
+  }
+});
 
 if (adminLoginForm) {
   adminLoginForm.addEventListener("submit", (event) => {
@@ -304,9 +445,8 @@ if (adminLoginForm) {
       setAuthenticated(true);
       if (loginError) loginError.textContent = "Login successful.";
       showDashboard();
-      renderCalendarList();
-      renderBookingList();
-      renderReport();
+      renderEnquiryList();
+      renderAdminCalendar();
       return;
     }
 
@@ -323,48 +463,29 @@ if (logoutBtn) {
   });
 }
 
-if (adminForm) {
-  adminForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const formData = new FormData(adminForm);
-    const date = String(formData.get("date") || "").trim();
-    const status = String(formData.get("status") || "available").trim();
-    const details = String(formData.get("details") || "").trim();
-
-    if (!date) return;
-
-    const data = loadCalendarData();
-    data[date] = { status, details };
-    saveCalendarData(data);
-    renderCalendarList();
-    adminForm.reset();
+if (adminCalPrev) {
+  adminCalPrev.addEventListener("click", () => {
+    adminCalendarMonth = clampCalendarMonth(
+      new Date(adminCalendarMonth.getFullYear(), adminCalendarMonth.getMonth() - 1, 1)
+    );
+    renderAdminCalendar();
   });
 }
 
-if (clearDateButton) {
-  clearDateButton.addEventListener("click", () => {
-    const formData = new FormData(adminForm);
-    const date = String(formData.get("date") || "").trim();
-    if (!date) return;
-
-    const data = loadCalendarData();
-    delete data[date];
-    saveCalendarData(data);
-    renderCalendarList();
-  });
-}
-
-if (downloadReport) {
-  downloadReport.addEventListener("click", () => {
-    window.print();
+if (adminCalNext) {
+  adminCalNext.addEventListener("click", () => {
+    adminCalendarMonth = clampCalendarMonth(
+      new Date(adminCalendarMonth.getFullYear(), adminCalendarMonth.getMonth() + 1, 1)
+    );
+    renderAdminCalendar();
   });
 }
 
 if (isAuthenticated()) {
   showDashboard();
-  renderCalendarList();
-  renderBookingList();
-  renderReport();
+  renderEnquiryList();
+  renderAdminCalendar();
 } else {
   showLogin();
 }
+
